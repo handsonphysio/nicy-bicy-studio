@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="500" viewBox="0 0 360 500" role="img" aria-labelledby="title desc">
+  <title id="title">Make Room — NICY BICY STUDIO</title>
+  <desc id="desc">An original fictional sample book cover in pale citron with bold black type and an abstract coral geometric sculpture.</desc>
+  <rect width="360" height="500" fill="#EBEDA9"/>
+  <path d="M24 42H336" stroke="#252B24" stroke-opacity=".6"/>
+  <g fill="#252B24" font-family="Arial, sans-serif" font-size="8" letter-spacing="2.4">
+    <text x="24" y="29">THE STUDIO COLLECTION</text>
+    <text x="336" y="29" text-anchor="end" letter-spacing="1">03</text>
+  </g>
+  <g fill="#252B24" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="900" letter-spacing="-5">
+    <text x="23" y="128">MAKE</text>
+    <text x="23" y="204">ROOM</text>
+  </g>
+  <text x="26" y="232" fill="#252B24" font-family="Arial, sans-serif" font-size="8" letter-spacing="1.8">A LITTLE SPACE FOR WHAT MATTERS</text>
+  <ellipse cx="192" cy="426" rx="111" ry="8" fill="#252B24" opacity=".09"/>
+  <path d="M84 389L228 369L291 407L147 427Z" fill="#AF4A39"/>
+  <path d="M84 373L228 353V369L84 389Z" fill="#E68C6B"/>
+  <path d="M84 373L147 411L291 391L228 353Z" fill="#F08A66"/>
+  <path d="M147 411L291 391V407L147 427Z" fill="#C85E47"/>
+  <path d="M116 294L153 273L153 381L116 386Z" fill="#D7664D"/>
+  <path d="M153 273L184 289V377L153 381Z" fill="#A44738"/>
+  <path d="M116 294L153 273L184 289L147 310Z" fill="#F49B76"/>
+  <path d="M208 309L245 288V368L208 373Z" fill="#D7664D"/>
+  <path d="M245 288L275 304V364L245 368Z" fill="#A44738"/>
+  <path d="M208 309L245 288L275 304L238 325Z" fill="#F49B76"/>
+  <path d="M107 292L176 253L281 288L212 327Z" fill="#EF9974"/>
+  <path d="M107 292L212 327V344L107 309Z" fill="#D7664D"/>
+  <path d="M212 327L281 288V305L212 344Z" fill="#A44738"/>
+  <circle cx="203" cy="276" r="26" fill="#252B24"/>
+  <path d="M24 451H336" stroke="#252B24" stroke-opacity=".6"/>
+  <text x="180" y="478" text-anchor="middle" fill="#252B24" font-family="Arial, sans-serif" font-size="9" letter-spacing="2.5">NICY BICY STUDIO</text>
+</svg>

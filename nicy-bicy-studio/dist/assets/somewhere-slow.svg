@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="500" viewBox="0 0 360 500" role="img" aria-labelledby="title desc">
+  <title id="title">Somewhere Slow — NICY BICY STUDIO</title>
+  <desc id="desc">An original fictional sample book cover with ochre and terracotta rolling hills, a golden sun, and cream serif lettering.</desc>
+  <defs><clipPath id="landscape"><rect x="0" y="199" width="360" height="252"/></clipPath></defs>
+  <rect width="360" height="500" fill="#B74F35"/>
+  <path d="M24 42H336" stroke="#F6EAD2" stroke-opacity=".7"/>
+  <g fill="#F6EAD2" font-family="Arial, sans-serif" font-size="8" letter-spacing="2.4">
+    <text x="24" y="29">THE STUDIO COLLECTION</text>
+    <text x="336" y="29" text-anchor="end" letter-spacing="1">02</text>
+  </g>
+  <g fill="#F6EAD2" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" letter-spacing="-2">
+    <text x="180" y="104" font-size="45">SOMEWHERE</text>
+    <text x="180" y="163" font-size="61">SLOW</text>
+  </g>
+  <text x="180" y="189" text-anchor="middle" fill="#F6EAD2" font-family="Arial, sans-serif" font-size="8" letter-spacing="2">FIND A LITTLE ROOM TO BREATHE</text>
+  <g clip-path="url(#landscape)">
+    <rect y="206" width="360" height="245" fill="#D98A50"/>
+    <circle cx="253" cy="260" r="48" fill="#E8BA59"/>
+    <path d="M-35 335C46 229 104 260 170 309C234 357 287 286 401 307V470H-35Z" fill="#E6B36A"/>
+    <path d="M-40 360C43 259 121 286 183 331C256 385 308 313 398 333V470H-40Z" fill="#C56B3D"/>
+    <path d="M-40 387C43 288 123 313 184 357C255 412 308 343 399 358V470H-40Z" fill="#F0D09A"/>
+    <path d="M-40 414C47 318 123 339 188 385C258 434 315 367 400 385V470H-40Z" fill="#B24F35"/>
+    <path d="M-40 439C45 350 123 366 190 410C263 458 317 396 400 413V475H-40Z" fill="#724B36"/>
+    <path d="M-40 469C43 376 125 394 192 437C264 484 318 424 401 438V485H-40Z" fill="#E3A557"/>
+  </g>
+  <path d="M24 451H336" stroke="#F6EAD2" stroke-opacity=".7"/>
+  <text x="180" y="478" text-anchor="middle" fill="#F6EAD2" font-family="Arial, sans-serif" font-size="9" letter-spacing="2.5">NICY BICY STUDIO</text>
+</svg>

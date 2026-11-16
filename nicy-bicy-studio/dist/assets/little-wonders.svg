@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="500" viewBox="0 0 360 500" role="img" aria-labelledby="title desc">
+  <title id="title">Little Wonders — NICY BICY STUDIO</title>
+  <desc id="desc">An original fictional sample book cover in cobalt blue, with cream serif lettering, an orange sun, and a botanical stem.</desc>
+  <defs>
+    <pattern id="paper" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 1H6" stroke="#fff5d8" stroke-opacity=".035"/></pattern>
+  </defs>
+  <rect width="360" height="500" fill="#244CC5"/>
+  <rect width="360" height="500" fill="url(#paper)"/>
+  <path d="M24 42H336" stroke="#F8EED7" stroke-opacity=".65"/>
+  <text x="24" y="29" fill="#F8EED7" font-family="Arial, sans-serif" font-size="8" letter-spacing="2.4">THE STUDIO COLLECTION</text>
+  <text x="336" y="29" text-anchor="end" fill="#F8EED7" font-family="Arial, sans-serif" font-size="8" letter-spacing="1">01</text>
+  <g fill="#F8EED7" font-family="Georgia, 'Times New Roman', serif" font-size="56" text-anchor="middle" letter-spacing="-2.5">
+    <text x="180" y="105">LITTLE</text>
+    <text x="180" y="163">WONDERS</text>
+  </g>
+  <text x="180" y="193" text-anchor="middle" fill="#F8EED7" font-family="Arial, sans-serif" font-size="8" letter-spacing="1.8">A FIELD GUIDE TO EVERYDAY MAGIC</text>
+  <circle cx="125" cy="322" r="83" fill="#F06E3B"/>
+  <path d="M56 356C71 347 81 350 93 359S118 370 135 360S161 348 177 358S202 370 218 359" fill="none" stroke="#244CC5" stroke-width="3"/>
+  <g fill="#F8EED7" stroke="#F8EED7" stroke-linecap="round">
+    <path d="M225 419C248 370 255 309 251 245" fill="none" stroke-width="3"/>
+    <path d="M251 278C228 278 212 264 209 242C232 241 248 254 251 278Z" stroke="none"/>
+    <path d="M253 302C278 301 294 285 297 264C272 266 257 278 253 302Z" stroke="none"/>
+    <path d="M250 329C225 330 205 317 199 295C224 292 244 305 250 329Z" stroke="none"/>
+    <path d="M245 355C271 356 290 342 296 319C272 317 251 330 245 355Z" stroke="none"/>
+    <path d="M236 385C211 385 193 372 188 350C212 349 231 361 236 385Z" stroke="none"/>
+  </g>
+  <path d="M54 422H306" stroke="#F8EED7" stroke-width="1"/>
+  <g fill="#F8EED7" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="180" y="448" font-size="8" letter-spacing="2.7">FOR THE CURIOUS AT HEART</text>
+    <text x="180" y="478" font-size="9" letter-spacing="2.5">NICY BICY STUDIO</text>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+{
+  "name": "nicy-bicy-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "NICY BICY STUDIO bookshop website",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "preview": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "check": "node --check dist/app.js && node --check dist/catalog.js && node --check scripts/serve.mjs"
+  }
+}

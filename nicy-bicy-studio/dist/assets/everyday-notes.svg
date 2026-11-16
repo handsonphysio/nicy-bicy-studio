@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="500" viewBox="0 0 360 500" role="img" aria-labelledby="title desc">
+  <title id="title">Everyday Notes — NICY BICY STUDIO</title>
+  <desc id="desc">An original fictional sample book cover in lavender with black serif lettering and an acid green checkered vase drawn with loose dark outlines.</desc>
+  <defs>
+    <clipPath id="vase"><path d="M147 274C156 298 147 303 131 322C98 360 111 409 152 418C180 425 227 419 237 387C247 353 221 326 211 310C203 297 206 283 210 274Z"/></clipPath>
+    <pattern id="checks" width="34" height="34" patternUnits="userSpaceOnUse" patternTransform="rotate(-4)">
+      <rect width="34" height="34" fill="#D6E65E"/>
+      <path d="M0 0H17V17H0ZM17 17H34V34H17Z" fill="#59623B"/>
+    </pattern>
+  </defs>
+  <rect width="360" height="500" fill="#CFC1E2"/>
+  <path d="M24 42H336" stroke="#28292B" stroke-opacity=".6"/>
+  <g fill="#28292B" font-family="Arial, sans-serif" font-size="8" letter-spacing="2.4">
+    <text x="24" y="29">THE STUDIO COLLECTION</text>
+    <text x="336" y="29" text-anchor="end" letter-spacing="1">05</text>
+  </g>
+  <g fill="#28292B" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" letter-spacing="-2">
+    <text x="180" y="103" font-size="45">EVERYDAY</text>
+    <text x="180" y="162" font-size="61">NOTES</text>
+  </g>
+  <text x="180" y="191" text-anchor="middle" fill="#28292B" font-family="Arial, sans-serif" font-size="8" letter-spacing="2.2">THOUGHTS, LISTS &amp; LITTLE THINGS</text>
+  <circle cx="188" cy="322" r="103" fill="#DDD3E9"/>
+  <g fill="none" stroke="#28292B" stroke-linecap="round" stroke-width="2.4">
+    <path d="M179 290C184 262 179 238 163 222"/>
+    <path d="M180 281C195 260 216 254 227 236"/>
+    <path d="M176 266C159 260 146 260 134 245"/>
+  </g>
+  <g fill="#D6E65E" stroke="#28292B" stroke-width="1.6">
+    <path d="M162 245C146 242 138 228 140 215C155 215 166 229 162 245Z"/>
+    <path d="M178 260C177 244 186 233 200 232C201 247 191 259 178 260Z"/>
+    <path d="M213 254C216 240 231 232 242 235C237 250 226 256 213 254Z"/>
+    <path d="M150 257C137 261 123 254 119 243C133 238 146 245 150 257Z"/>
+  </g>
+  <g clip-path="url(#vase)"><rect x="105" y="270" width="141" height="156" fill="url(#checks)"/></g>
+  <path d="M147 274C156 298 147 303 131 322C98 360 111 409 152 418C180 425 227 419 237 387C247 353 221 326 211 310C203 297 206 283 210 274Z" fill="none" stroke="#28292B" stroke-width="2.4"/>
+  <ellipse cx="178.5" cy="274" rx="31.5" ry="5" fill="#59623B" stroke="#28292B" stroke-width="2"/>
+  <path d="M24 451H336" stroke="#28292B" stroke-opacity=".6"/>
+  <text x="180" y="478" text-anchor="middle" fill="#28292B" font-family="Arial, sans-serif" font-size="9" letter-spacing="2.5">NICY BICY STUDIO</text>
+</svg>

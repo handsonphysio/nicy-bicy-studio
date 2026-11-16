@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="500" viewBox="0 0 360 500" role="img" aria-labelledby="title desc">
+  <title id="title">Wild Ideas — NICY BICY STUDIO</title>
+  <desc id="desc">An original fictional sample book cover on warm cream with blue serif lettering and a large abstract orange flower.</desc>
+  <rect width="360" height="500" fill="#F1E9D6"/>
+  <path d="M24 42H336" stroke="#2850A7" stroke-opacity=".6"/>
+  <g fill="#2850A7" font-family="Arial, sans-serif" font-size="8" letter-spacing="2.4">
+    <text x="24" y="29">THE STUDIO COLLECTION</text>
+    <text x="336" y="29" text-anchor="end" letter-spacing="1">06</text>
+  </g>
+  <g fill="#2850A7" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" font-size="61" letter-spacing="-2">
+    <text x="180" y="106">WILD</text>
+    <text x="180" y="164">IDEAS</text>
+  </g>
+  <text x="180" y="192" text-anchor="middle" fill="#2850A7" font-family="Arial, sans-serif" font-size="8" letter-spacing="2">LET YOUR CURIOSITY GROW</text>
+  <path d="M182 418C180 388 184 360 182 329" fill="none" stroke="#2850A7" stroke-width="10"/>
+  <path d="M180 402C132 406 109 388 109 361C141 357 171 371 180 402Z" fill="#2850A7"/>
+  <path d="M185 379C218 380 246 362 251 339C221 333 193 351 185 379Z" fill="#2850A7"/>
+  <g fill="#E56B3B">
+    <ellipse cx="181" cy="263" rx="30" ry="48" transform="rotate(-8 181 263)"/>
+    <ellipse cx="225" cy="282" rx="30" ry="48" transform="rotate(51 225 282)"/>
+    <ellipse cx="226" cy="327" rx="30" ry="48" transform="rotate(110 226 327)"/>
+    <ellipse cx="183" cy="347" rx="30" ry="48" transform="rotate(172 183 347)"/>
+    <ellipse cx="141" cy="326" rx="30" ry="48" transform="rotate(231 141 326)"/>
+    <ellipse cx="140" cy="281" rx="30" ry="48" transform="rotate(291 140 281)"/>
+  </g>
+  <circle cx="183" cy="304" r="37" fill="#2850A7"/>
+  <circle cx="183" cy="304" r="21" fill="#F1E9D6"/>
+  <path d="M170 304H196M183 291V317" stroke="#E56B3B" stroke-width="2"/>
+  <path d="M24 451H336" stroke="#2850A7" stroke-opacity=".6"/>
+  <text x="180" y="478" text-anchor="middle" fill="#2850A7" font-family="Arial, sans-serif" font-size="9" letter-spacing="2.5">NICY BICY STUDIO</text>
+</svg>
