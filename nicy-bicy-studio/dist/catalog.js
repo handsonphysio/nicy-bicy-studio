@@ -2,7 +2,7 @@
 // Set sample:false, author, priceLabel and an HTTPS purchaseUrl for a real listing.
 export const settings = {
   brand: 'NICY BICY STUDIO',
-  domain: 'nicybicy.ca',
+  domain: 'nicybicy.com',
   contactEmail: '',
 };
 
