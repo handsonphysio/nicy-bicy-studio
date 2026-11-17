@@ -23,3 +23,20 @@ The owner explicitly supplied these updated paperback cover PDFs from the `KDP_E
 Their front trim panels were rendered at 120 DPI with Poppler using the package's verified front-panel geometry. The source PDFs were not changed. Website files are `assets/books/animals-new.png`, `cozy-new.png`, and `travel-new.png`. The updated paperback artwork is shown for each book; Amazon may display earlier previews, and the site explains that distinction.
 
 To add another format, add its verified edition URL and metadata to the book's `variants` array in `dist/catalog.js`. Do not create duplicate cards or guess an ASIN. Paperback remains the first/default format. Categories and filters are generated from the catalog.
+
+## Upcoming Premium Preschool Series
+
+The owner requested Learn How to Write Workbook as an upcoming Amazon launch. Its verified subtitle is Pen Control, Letters, Shapes & Numbers, for ages 3–5, with 96 color pages. The existing November 16, 2026 marketing kit confirms approved cover A and the latest interior. No launch date or ASIN has been supplied, so this feature says Coming soon on Amazon and links to the studio's author page rather than a fictional product listing.
+
+The website reuses the existing marketing kit files without changing the artwork or footage:
+
+| Website asset in `dist/assets/preschool/` | Original marketing-kit file |
+| --- | --- |
+| `workbook-promo.mp4` | `videos/01-landscape-book-tour-1920x1080.mp4` |
+| `workbook-promo-poster.jpg` | `videos/01-landscape-book-tour-1920x1080-poster.jpg` |
+| `workbook-promo.vtt` | `videos/on-screen-text.vtt` |
+| `pen-control.jpg` | `amazon-a-plus/02a-pen-control-600x600.jpg` |
+| `stroke-guide.jpg` | `amazon-a-plus/02b-stroke-guide-600x600.jpg` |
+| `count-and-write.jpg` | `amazon-a-plus/02c-count-and-write-600x600.jpg` |
+
+The original 20-second landscape tour includes the approved cover, actual workbook page previews, on-screen text, and original instrumental music. It plays only on visitor request and has optional English captions. The feature does not claim that the workbook is already on sale.

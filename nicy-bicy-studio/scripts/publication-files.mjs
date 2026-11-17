@@ -16,7 +16,7 @@ async function walk(relative) {
   return nested.flat();
 }
 const files = [...fixed, ...await walk('nicy-bicy-studio/dist')].sort();
-const binary = (file) => /\.(?:woff2|png|ico)$/i.test(file);
+const binary = (file) => /\.(?:woff2|png|ico|jpe?g|mp4)$/i.test(file);
 if (mode === 'list') process.stdout.write(JSON.stringify(files));
 else if (mode === 'text') {
   const entries = await Promise.all(files.filter((file) => !binary(file)).map(async (file) => ({path:file, mode:'100644', type:'blob', content:await readFile(path.join(root,file),'utf8')})));
