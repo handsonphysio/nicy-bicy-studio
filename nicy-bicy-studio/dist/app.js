@@ -25,6 +25,28 @@ function element(tag, className, text) {
   return node;
 }
 
+function categoryName(book) {
+  return book.category?.trim() || 'Books';
+}
+
+function renderFilters() {
+  const categories = ['All books', ...new Set(books.map(categoryName))]
+    .filter((name, index) => index === 0 || (name !== 'All books' && name !== 'Saved'));
+  const buttons = categories.map((name) => {
+    const button = element('button', 'filter', name);
+    button.type = 'button';
+    button.dataset.category = name;
+    button.setAttribute('aria-pressed', name === category);
+    return button;
+  });
+  const shelf = element('button', 'filter saved-filter', 'Your shelf ');
+  shelf.type = 'button';
+  shelf.dataset.category = 'Saved';
+  shelf.setAttribute('aria-pressed', category === 'Saved');
+  shelf.append(element('span', 'saved-count', saved.size));
+  $('.filters').replaceChildren(...buttons, shelf);
+}
+
 function bookmarkIcon() {
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.setAttribute('viewBox', '0 0 24 24');
@@ -82,38 +104,45 @@ function toggleSaved(book) {
 
 function createCard(book) {
   const card = element('article', 'book-card');
-  card.style.setProperty('--book-bg', book.color);
+  card.style.setProperty('--book-bg', book.color || '#ece5d5');
   const art = element('div', 'book-art');
   const coverButton = element('button', 'book-cover-button');
   coverButton.setAttribute('aria-label', `View ${book.title}`);
   const cover = element('img');
   cover.src = book.cover; cover.alt = `${book.title} ${book.sample ? 'sample ' : ''}book cover`;
-  cover.width = 360; cover.height = 500; cover.loading = 'lazy';
+  cover.width = book.coverWidth || 360; cover.height = book.coverHeight || 500; cover.loading = 'lazy';
   coverButton.append(cover);
   coverButton.addEventListener('click', () => openBook(book, coverButton));
   const bookmark = element('button', 'bookmark');
   bookmark.dataset.bookId = book.id;
   bookmark.append(bookmarkIcon());
   bookmark.addEventListener('click', () => toggleSaved(book));
-  art.append(coverButton, bookmark, element('span', 'book-tag', book.mood.toUpperCase()));
+  art.append(coverButton, bookmark);
+  if (book.mood) art.append(element('span', 'book-tag', book.mood.toUpperCase()));
   const meta = element('div', 'book-meta');
-  meta.append(element('span', '', book.category), element('span', '', book.sample ? 'SAMPLE EDITION' : book.author || 'NICY BICY STUDIO'));
+  meta.append(element('span', '', categoryName(book)), element('span', '', book.sample ? 'SAMPLE EDITION' : book.author || 'NICY BICY STUDIO'));
   const heading = element('h3');
   const titleButton = element('button', '', book.title);
   titleButton.addEventListener('click', () => openBook(book, titleButton));
   heading.append(titleButton);
   const bottom = element('div', 'book-bottom');
-  const details = element('button', '', 'Take a look ↗');
+  const details = element('button', '', availableVariants(book).length > 1 ? 'Format options ↗' : 'Book details ↗');
+  details.setAttribute('aria-label', `View details for ${book.title}`);
   details.addEventListener('click', () => openBook(book, details));
-  bottom.append(element('span', '', book.priceLabel || book.format), details);
-  card.append(art, meta, heading, element('p', 'book-subtitle', book.subtitle), bottom);
+  if (book.priceLabel || book.format) bottom.append(element('span', '', book.priceLabel || book.format));
+  bottom.append(details);
+  card.append(art, meta, heading);
+  if (book.subtitle) card.append(element('p', 'book-subtitle', book.subtitle));
+  card.append(bottom);
+  const buy = purchaseLink(book, 'book-buy');
+  if (buy) card.append(buy);
   return card;
 }
 
 function render() {
   let filtered = books.filter((book) => {
-    const matchesCategory = category === 'All books' || (category === 'Saved' ? saved.has(book.id) : book.category === category);
-    const haystack = `${book.title} ${book.subtitle} ${book.category} ${book.description} ${book.mood}`.toLowerCase();
+    const matchesCategory = category === 'All books' || (category === 'Saved' ? saved.has(book.id) : categoryName(book) === category);
+    const haystack = [book.title, book.subtitle, categoryName(book), book.description, book.mood, book.author].filter(Boolean).join(' ').toLowerCase();
     return matchesCategory && haystack.includes(query.toLowerCase().trim());
   });
   if (sort !== 'featured') filtered = [...filtered].sort((a, b) => sort === 'az' ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title));
@@ -133,27 +162,81 @@ function httpsUrl(value) {
   try { const url = new URL(value); return url.protocol === 'https:' ? url.href : null; } catch { return null; }
 }
 
+function availableVariants(book) {
+  const variants = Array.isArray(book.variants) ? book.variants : [];
+  const valid = variants.filter((variant) => variant.format && httpsUrl(variant.purchaseUrl));
+  if (valid.length) return [...valid].sort((a, b) => Number(b.format.toLowerCase() === 'paperback') - Number(a.format.toLowerCase() === 'paperback'));
+  return httpsUrl(book.purchaseUrl) ? [{ id: 'default', format: book.format || 'Book', purchaseUrl: book.purchaseUrl, pages: book.pages }] : [];
+}
+
+function purchaseLink(book, className, variant = availableVariants(book)[0]) {
+  const purchaseUrl = !book.sample && variant && httpsUrl(variant.purchaseUrl);
+  if (!purchaseUrl) return null;
+  const caption = className === 'book-buy' ? 'Buy on Amazon' : `Buy ${variant.format.toLowerCase()} on Amazon`;
+  const link = element('a', `button button-dark amazon-link ${className}`, caption);
+  const arrow = element('span', '', '↗');
+  arrow.setAttribute('aria-hidden', 'true');
+  link.append(arrow);
+  link.href = purchaseUrl;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.setAttribute('aria-label', `Buy ${variant.format.toLowerCase()} on Amazon: ${book.title} (opens in a new tab)`);
+  return link;
+}
+
 function openBook(book, trigger) {
   activeBook = book;
   returnFocus = trigger;
   const layout = element('div', 'dialog-layout');
-  layout.style.setProperty('--book-bg', book.color);
+  layout.style.setProperty('--book-bg', book.color || '#ece5d5');
   const art = element('div', 'dialog-art');
-  const image = element('img'); image.src = book.cover; image.alt = `${book.title} cover`; image.width = 360; image.height = 500;
-  art.append(image);
+  const image = element('img'); image.src = book.cover; image.alt = `${book.title}, updated paperback cover`; image.width = book.coverWidth || 360; image.height = book.coverHeight || 500;
+  art.append(image, element('p', 'cover-caption', 'Updated paperback cover shown'));
   const info = element('div', 'dialog-info');
   const title = element('h2', '', book.title); title.id = 'dialog-title';
   const specs = element('div', 'dialog-specs');
-  specs.append(element('span', '', book.format), element('span', '', `${book.pages} pages`));
-  const save = element('button', 'button button-dark'); save.id = 'dialog-save';
+  specs.setAttribute('aria-live', 'polite');
+  const variants = availableVariants(book);
+  let selectedVariant = variants[0];
+  const buySlot = element('div', 'purchase-slot');
+  const save = element('button', `button ${selectedVariant ? 'button-outline' : 'button-dark'}`); save.id = 'dialog-save';
   save.addEventListener('click', () => toggleSaved(book));
-  info.append(element('p', 'eyebrow', book.category.toUpperCase()), title, element('p', 'dialog-subtitle', book.subtitle), element('p', 'dialog-description', book.description), specs, save);
-  const purchaseUrl = httpsUrl(book.purchaseUrl);
-  if (!book.sample && purchaseUrl) {
-    const buy = element('a', 'button button-outline', `Buy this book${book.priceLabel ? ` · ${book.priceLabel}` : ''} ↗`);
-    buy.href = purchaseUrl; buy.target = '_blank'; buy.rel = 'noopener noreferrer'; buy.style.marginTop = '12px';
-    info.append(buy);
+  info.append(element('p', 'eyebrow', categoryName(book).toUpperCase()), title);
+  if (book.subtitle) info.append(element('p', 'dialog-subtitle', book.subtitle));
+  if (book.description) info.append(element('p', 'dialog-description', book.description));
+  if (variants.length) {
+    const formatLabel = element('label', 'format-label', 'Book format');
+    formatLabel.htmlFor = 'book-format';
+    const formatSelect = element('select', 'format-select');
+    formatSelect.id = 'book-format';
+    for (const variant of variants) {
+      const option = element('option', '', variant.format);
+      option.value = variant.id;
+      formatSelect.append(option);
+    }
+    formatSelect.value = selectedVariant.id;
+    formatSelect.addEventListener('change', () => {
+      selectedVariant = variants.find((variant) => variant.id === formatSelect.value) || variants[0];
+      updateVariant();
+    });
+    info.append(formatLabel, formatSelect);
   }
+  function updateVariant() {
+    const format = selectedVariant?.format || book.format;
+    const pages = Number(selectedVariant?.pages || book.pages);
+    const values = [];
+    if (format) values.push(element('span', '', format));
+    if (Number.isInteger(pages) && pages > 0) values.push(element('span', '', `${pages} pages`));
+    if (book.language) values.push(element('span', '', book.language));
+    specs.replaceChildren(...values);
+    const buy = purchaseLink(book, 'dialog-buy', selectedVariant);
+    buySlot.replaceChildren(...(buy ? [buy] : []));
+  }
+  updateVariant();
+  if (specs.childElementCount) info.append(specs);
+  info.append(buySlot);
+  info.append(save);
+  if (!book.sample) info.append(element('p', 'dialog-disclaimer', 'Amazon shows current prices and availability. Its preview may show earlier cover artwork.'));
   if (book.sample) info.append(element('p', 'dialog-disclaimer', 'An imagined sample edition, created to introduce our studio. This title is not currently for sale.'));
   layout.append(art, info);
   $('#dialog-content').replaceChildren(layout);
@@ -162,7 +245,13 @@ function openBook(book, trigger) {
   updateSavedControls();
 }
 
-document.querySelectorAll('.filter').forEach((button) => button.addEventListener('click', () => { category = button.dataset.category; render(); }));
+renderFilters();
+$('.filters').addEventListener('click', (event) => {
+  const button = event.target.closest('button[data-category]');
+  if (!button || !event.currentTarget.contains(button)) return;
+  category = button.dataset.category;
+  render();
+});
 $('#sort').addEventListener('change', (event) => { sort = event.target.value; render(); });
 $('#book-search').addEventListener('input', (event) => { query = event.target.value; render(); });
 $('.search-trigger').addEventListener('click', () => {
@@ -217,12 +306,12 @@ $('#privacy-button').addEventListener('click', () => { $('#privacy-dialog').show
 $('#clear-shelf').addEventListener('click', () => { saved.clear(); persist(); render(); showToast('Your saved shelf has been cleared.'); });
 
 const prompts = [
-  '“Read something that reminds you how big the world can be.”',
-  '“Find a sentence you love. Carry it with you for the rest of the day.”',
-  '“Give yourself ten quiet minutes. Let a book take you somewhere new.”',
-  '“Open a notebook. Write down one small thing you noticed today.”',
-  '“Revisit an old favourite. Meet a past version of yourself between the pages.”',
-  '“Let curiosity choose your next chapter.”',
+  '“Pick three colors you love. See where they take you.”',
+  '“Try a familiar scene in an unexpected color palette.”',
+  '“Take your time with one page. There is no finish line.”',
+  '“Notice the colors around you. Borrow one for your next page.”',
+  '“Give a friendly animal a color only you would imagine.”',
+  '“Share a creative afternoon. Make every page your own.”',
 ];
 let promptIndex = 0;
 $('#new-prompt').addEventListener('click', () => {

@@ -19,7 +19,7 @@ Open [http://localhost:4173](http://localhost:4173). Set the `PORT` environment 
 - Edit `nicy-bicy-studio/dist/index.html`, `styles.css`, and `app.js` for content, appearance, and interactions.
 - Keep cover artwork in `nicy-bicy-studio/dist/assets/` and use relative asset paths.
 
-The initial collection contains clearly labeled sample books. Checkout, payment processing, inventory, and email collection are not connected. Replace the sample catalog and configure real ordering details before accepting purchases.
+The collection features three published Nicy Bicy Studio coloring books. Paperback is the primary format; verified hardcover listings are available inside each book's format options. Purchase buttons open the correct Amazon.ca edition, where Amazon handles current prices, availability, payment, and delivery. The site uses the updated covers supplied by the owner. See `nicy-bicy-studio/BOOKS.md` for edition identifiers and cover sources.
 
 ## Publish with GitHub Pages
 
