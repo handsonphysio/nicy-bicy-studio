@@ -6,6 +6,7 @@ Verified on November 16, 2026. Paperback is the primary edition for every book. 
 
 | Book | Paperback ASIN | Hardcover ASIN | Pages |
 | --- | --- | --- | --- |
+| Learn How to Write Workbook | B0HS5Q51V3 | No verified listing | 120 |
 | Bold & Easy Cozy Coloring Book | B0HQJ2YHVJ | B0HQRL6N3P | 112 |
 | Bold & Easy Amazing Animals Coloring Book | B0HQVP8HQW | B0HQNN6TQ3 | 116 |
 | Bold & Easy Animal Travel Coloring Book | B0HQKH3ZPV | Not linked on the current Amazon.ca listing | 116 |
@@ -24,19 +25,19 @@ Their front trim panels were rendered at 120 DPI with Poppler using the package'
 
 To add another format, add its verified edition URL and metadata to the book's `variants` array in `dist/catalog.js`. Do not create duplicate cards or guess an ASIN. Paperback remains the first/default format. Categories and filters are generated from the catalog.
 
-## Upcoming Premium Preschool Series
+## Available Premium Preschool Series
 
-The owner requested Learn How to Write Workbook as an upcoming Amazon launch. Its verified subtitle is Pen Control, Letters, Shapes & Numbers, for ages 3–5, with 96 color pages. The existing November 16, 2026 marketing kit confirms approved cover A and the latest interior. No launch date or ASIN has been supplied, so this feature says Coming soon on Amazon and links to the studio's author page rather than a fictional product listing.
+Learn How to Write Workbook is now available in paperback at https://www.amazon.ca/dp/B0HS5Q51V3. Verified on November 20, 2026 through the studio's Amazon author page and the product listing: Letters, Shapes and Numbers with Pen control; 120 pages; English; ages 3–5; published November 18, 2026; ISBN 9798143751064; 8.5 × 11 inches. No hardcover or Kindle link is invented. Current prices and delivery remain on Amazon.
 
-The website reuses the existing marketing kit files without changing the artwork or footage:
+The published 120-page edition supersedes the earlier 96-page preview. The website uses the owner's existing marketing-kit-120-pages assets, with approved cover A unchanged. The corresponding landscape tour, poster, and three A+ graphics replace the earlier promo references. English captions were updated to the 120-page count. Original source files were not altered.
 
-| Website asset in `dist/assets/preschool/` | Original marketing-kit file |
+| Website asset | Existing source |
 | --- | --- |
-| `workbook-promo.mp4` | `videos/01-landscape-book-tour-1920x1080.mp4` |
-| `workbook-promo-poster.jpg` | `videos/01-landscape-book-tour-1920x1080-poster.jpg` |
-| `workbook-promo.vtt` | `videos/on-screen-text.vtt` |
-| `pen-control.jpg` | `amazon-a-plus/02a-pen-control-600x600.jpg` |
-| `stroke-guide.jpg` | `amazon-a-plus/02b-stroke-guide-600x600.jpg` |
-| `count-and-write.jpg` | `amazon-a-plus/02c-count-and-write-600x600.jpg` |
+| `assets/books/learn-how-to-write.png` | `learn-how-to-write/cover-choices/A-colorful-first-steps.png` |
+| `assets/preschool/workbook-promo-120.mp4` | `marketing-kit-120-pages/videos/01-landscape-book-tour-1920x1080.mp4` |
+| `assets/preschool/workbook-promo-120-poster.jpg` | Matching 120-page landscape poster |
+| `assets/preschool/pen-control-120.jpg` | `marketing-kit-120-pages/amazon-a-plus/02a-pen-control-600x600.jpg` |
+| `assets/preschool/stroke-guide-120.jpg` | `marketing-kit-120-pages/amazon-a-plus/02b-stroke-guide-600x600.jpg` |
+| `assets/preschool/count-and-write-120.jpg` | `marketing-kit-120-pages/amazon-a-plus/02c-count-and-write-600x600.jpg` |
 
-The original 20-second landscape tour includes the approved cover, actual workbook page previews, on-screen text, and original instrumental music. It plays only on visitor request and has optional English captions. The feature does not claim that the workbook is already on sale.
+The feature is available at `#preschool`; a legacy `#upcoming` anchor remains for earlier shared links. The workbook is also the first card in the searchable collection, with paperback as default.

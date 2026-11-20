@@ -19,7 +19,7 @@ Open [http://localhost:4173](http://localhost:4173). Set the `PORT` environment 
 - Edit `nicy-bicy-studio/dist/index.html`, `styles.css`, and `app.js` for content, appearance, and interactions.
 - Keep cover artwork in `nicy-bicy-studio/dist/assets/` and use relative asset paths.
 
-The collection features three published Nicy Bicy Studio coloring books. Paperback is the primary format; verified hardcover listings are available inside each book's format options. Purchase buttons open the correct Amazon.ca edition, where Amazon handles current prices, availability, payment, and delivery. The site uses the updated covers supplied by the owner. The upcoming Premium Preschool Series features Learn How to Write Workbook using its existing promo video and preview graphics. See `nicy-bicy-studio/BOOKS.md` for edition identifiers and asset sources.
+The collection features four published Nicy Bicy Studio books. Paperback is the primary format; verified hardcover listings are available inside each book's format options. Purchase buttons open the correct Amazon.ca edition, where Amazon handles current prices, availability, payment, and delivery. The site uses the updated covers supplied by the owner. The Premium Preschool Series features the available 120-page Learn How to Write Workbook paperback, its direct Amazon purchase link, and the matching existing 120-page promo video and preview graphics. See `nicy-bicy-studio/BOOKS.md` for edition identifiers and asset sources.
 
 ## Publish with GitHub Pages
 

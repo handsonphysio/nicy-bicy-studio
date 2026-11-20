@@ -14,6 +14,34 @@ export const books = [
     "sample": false,
     "priceLabel": "",
     "language": "English",
+    "id": "learn-how-to-write",
+    "title": "Learn How to Write Workbook",
+    "subtitle": "Letters, Shapes and Numbers with Pen control",
+    "category": "Preschool learning",
+    "cover": "assets/books/learn-how-to-write.png",
+    "coverWidth": 1103,
+    "coverHeight": 1426,
+    "color": "#e0efea",
+    "format": "Paperback",
+    "pages": 120,
+    "mood": "For little learners ages 3–5",
+    "description": "A colorful start to writing for ages 3–5. Explore pencil-control paths, uppercase and lowercase letters, shapes, and numbers 0–10, with numbered starts, direction arrows, realistic picture examples, and extra independent writing practice.",
+    "purchaseUrl": "https://www.amazon.ca/dp/B0HS5Q51V3",
+    "variants": [
+      {
+        "id": "paperback",
+        "format": "Paperback",
+        "asin": "B0HS5Q51V3",
+        "pages": 120,
+        "purchaseUrl": "https://www.amazon.ca/dp/B0HS5Q51V3"
+      }
+    ]
+  },
+  {
+    "author": "Nicy Bicy Studio",
+    "sample": false,
+    "priceLabel": "",
+    "language": "English",
     "id": "cozy-coloring",
     "title": "Bold & Easy Cozy Coloring Book",
     "subtitle": "Simple & Relaxing Colouring Pages for Kids & Adults",
